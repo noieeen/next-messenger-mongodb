@@ -53,6 +53,7 @@ export const authOptions: AuthOptions = {
       },
     }),
   ],
+  // Debug mode -> show logging information
   debug: process.env.NODE_ENV === "development",
   session: {
     strategy: "jwt",
