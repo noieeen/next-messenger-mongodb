@@ -81,7 +81,7 @@ const SettingModal: React.FC<SettingModalProps> = ({
                 <div className="mt-2 flex items-center gap-x-3">
                   <Image
                     src={
-                      image || currentUser.image || "/images/placeholder.jpg"
+                      image || currentUser?.image || "/images/placeholder.jpg"
                     }
                     className="rounded-full"
                     width={48}
