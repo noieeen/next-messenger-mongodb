@@ -1,13 +1,9 @@
 "use client";
 
-import { CircleLoader } from "react-spinners";
+import LoadingModal from "../components/LoadingModal";
 
 const Loading = () => {
-  return (
-    <div className="h-full w-full bg-white opacity-50 fixed left-0 top-0 flex justify-center items-center">
-      <CircleLoader size={40} color="#0ea5e9" />
-    </div>
-  );
+  return <LoadingModal />;
 };
 
 export default Loading;

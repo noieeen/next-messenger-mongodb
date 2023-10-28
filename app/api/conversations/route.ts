@@ -19,15 +19,19 @@ export async function POST(request: Request) {
 
     // create a new group conversation
     if (isGroup) {
-      const newConversations = await prisma?.conversation.create({
+      const newConversations = await prisma.conversation.create({
         data: {
           name,
           isGroup,
           users: {
-            ...members.map((member: { value: string }) => ({
-              id: members.value,
-            })),
-            id: currentUser.id,
+            connect: [
+              ...members.map((member: { value: string }) => ({
+                id: member.value,
+              })),
+              {
+                id: currentUser.id,
+              },
+            ],
           },
         },
         include: { users: true },
